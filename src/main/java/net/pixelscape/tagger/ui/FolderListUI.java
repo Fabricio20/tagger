@@ -4,7 +4,7 @@ import net.pixelscape.tagger.framework.UI;
 import net.pixelscape.tagger.models.TagFolder;
 import net.pixelscape.tagger.services.FolderService;
 import net.pixelscape.tagger.ui.mixins.FolderItemMixin;
-import net.pixelscape.tagger.ui.mixins.PanelList;
+import org.jdesktop.swingx.VerticalLayout;
 
 import javax.swing.*;
 import java.awt.*;
@@ -24,7 +24,8 @@ public class FolderListUI extends UI {
         this.frame.setSize(500, 250);
         this.frame.setTitle("Tagger :: Folder Manager");
 
-        PanelList list = new PanelList();
+        JPanel list = new JPanel();
+        list.setLayout(new VerticalLayout());
         for (int i = 0; i < 25; i++) {
             TagFolder folder = new TagFolder();
             folder.setName("example" + i);
